@@ -1,6 +1,6 @@
 // imports necesarios
 var express = require('express');
-//var mongoose = require('mongoose');
+var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
 var multer = require('multer');
 var method_override = require("method-override");
