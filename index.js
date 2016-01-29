@@ -22,7 +22,7 @@ cloudinary.config({
 
 // Creamos objeto app con express
 var app = express();
-
+app.set('port', (process.env.PORT || 5000));
 // environment
 /*
 var conection_string = '127.0.0.1:27017/nodejs'
@@ -195,6 +195,6 @@ app.delete("/menu/:id", middleware_upload, function(solicitud, respuesta){
 });
 
 // Definiendo puerto de escucha
-app.listen(8080, function() {
-  console.log('Node app is running on port', 8080);
+app.listen(app.get('port'), function() {
+  console.log('Node app is running on port', app.get('port'));
 });
