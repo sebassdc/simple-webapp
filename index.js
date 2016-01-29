@@ -5,7 +5,7 @@ var bodyParser = require('body-parser');
 var multer = require('multer');
 var method_override = require("method-override");
 
-//var Schema = mongoose.Schema;
+var Schema = mongoose.Schema;
 
 var cloudinary = require('cloudinary');
 
@@ -24,25 +24,18 @@ cloudinary.config({
 var app = express();
 app.set('port', (process.env.PORT || 5000));
 // environment
-/*
-var conection_string = '127.0.0.1:27017/nodejs'
 
-if(process.env.OPENSHIFT_MONGO_DB_PASSWORD){
-	conection_string = process.env.OPENSHIFT_MONGO_DB_USERNAME + ":" +
-	process.env.OPENSHIFT_MONGO_DB_PASSWORD + "@" +
-	process.env.OPENSHIFT_MONGO_DB_HOST + ":" +
-	process.env.OPENSHIFT_MONGO_DB_PORT + "/" +
-	process.env.OPENSHIFT_APP_NAME;
-}
+var conection_string = '127.0.0.1:27017/nodejs'
+conection_string = 'sebassdc:l1c4n10@ds051585.mongolab.com:51585/first_try'
 
 // Coneccion a base de datos
 mongoose.connect("mongodb://" + conection_string);
-*/
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
 //Definir el schema de nuestros productos
-/*
+
 var productSchemaJSON = {
 	title:String,
 	description:String,
@@ -60,7 +53,7 @@ productSchema.virtual("image.url").get(function(){
 
 //Definiendo el modelo de datos de product con mongo
 var Product = mongoose.model("Product", productSchema);
-*/
+
 // View con jade
 app.set('views', __dirname + '/views');
 app.set("view engine", "jade");
