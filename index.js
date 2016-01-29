@@ -4,7 +4,6 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var multer = require('multer');
 var method_override = require("method-override");
-var var http = require('http');
 
 //var Schema = mongoose.Schema;
 
